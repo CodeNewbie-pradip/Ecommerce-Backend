@@ -1,6 +1,7 @@
-const mongoose=require("mogoose");
+const mongoose=require("mongoose");
+const Schema=mongoose.Schema;
 
-const userSchema=mongoose.Schema({
+const userSchema=new Schema({
     fullname:String,
     email:String,
     password:String,
@@ -8,13 +9,19 @@ const userSchema=mongoose.Schema({
         type:Array, 
         default:[],
     },
-    isAdmin:Boolean,
+    isAdmin:{
+        type:Boolean,
+        default:false
+    },
     orders:{
         type:Array,
         default:[]
     },
-    contact:Number,
+    contact:{
+        type:String,
+        required:true
+    },
     picture:String
 });
 
-module.exports=mongoose.model("user", userSchema);
+module.exports=mongoose.model("User", userSchema);

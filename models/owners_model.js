@@ -1,4 +1,4 @@
-const mongoose=require("mogoose");
+const mongoose=require("mongoose");
 
 const ownerSchema=mongoose.Schema({
     fullname:{
@@ -17,4 +17,4 @@ const ownerSchema=mongoose.Schema({
     gstin:String
 });
 
-module.exports=mongoose.model("user", userSchema);
+module.exports=mongoose.model("user", ownerSchema);
